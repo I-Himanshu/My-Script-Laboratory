@@ -57,8 +57,7 @@ Each script in this laboratory is documented with:
 
 **Himanshu Kumar**
 - GitHub: [@I-Himanshu](https://github.com/I-Himanshu)
-- Website: [Your Website]
-- LinkedIn: [Your LinkedIn]
+- LinkedIn: [Himanshu Kumar](linkedin.com/in/i-himanshu)
 
 ## 📜 License
 
