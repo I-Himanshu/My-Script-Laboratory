@@ -110,36 +110,36 @@ function dev_env_info() {
 
 # Enhanced system status with more metrics
 function system_status() {
-    local status=""
+    local statuss=""
     
     # RAM usage with threshold alerts
     local ram_usage=$(free -m | awk 'NR==2{printf "%.1f%%", $3*100/$2 }')
     if [[ ${ram_usage%.*} -gt 90 ]]; then
-        status+="%{$fg_bold[red]%}RAM:$ram_usage%{$reset_color%} "
+        statuss+="%{$fg_bold[red]%}RAM:$ram_usage%{$reset_color%} "
     elif [[ ${ram_usage%.*} -gt 80 ]]; then
-        status+="%{$fg[red]%}RAM:$ram_usage%{$reset_color%} "
+        statuss+="%{$fg[red]%}RAM:$ram_usage%{$reset_color%} "
     elif [[ ${ram_usage%.*} -gt 70 ]]; then
-        status+="%{$fg[yellow]%}RAM:$ram_usage%{$reset_color%} "
+        statuss+="%{$fg[yellow]%}RAM:$ram_usage%{$reset_color%} "
     fi
     
     # Load average with smart thresholds
     local cpu_cores=$(nproc)
     local load=$(uptime | awk '{print $(NF-2)}' | tr -d ',')
     if (( $(echo "$load > $cpu_cores" | bc -l) )); then
-        status+="%{$fg[red]%}LOAD:$load%{$reset_color%} "
+        statuss+="%{$fg[red]%}LOAD:$load%{$reset_color%} "
     elif (( $(echo "$load > $cpu_cores/2" | bc -l) )); then
-        status+="%{$fg[yellow]%}LOAD:$load%{$reset_color%} "
+        statuss+="%{$fg[yellow]%}LOAD:$load%{$reset_color%} "
     fi
     
     # Disk space check for root partition
     local disk_usage=$(df -h / | awk 'NR==2 {print $5}' | tr -d '%')
     if [[ $disk_usage -gt 90 ]]; then
-        status+="%{$fg_bold[red]%}DISK:$disk_usage%%%{$reset_color%} "
+        statuss+="%{$fg_bold[red]%}DISK:$disk_usage%%%{$reset_color%} "
     elif [[ $disk_usage -gt 80 ]]; then
-        status+="%{$fg[yellow]%}DISK:$disk_usage%%%{$reset_color%} "
+        statuss+="%{$fg[yellow]%}DISK:$disk_usage%%%{$reset_color%} "
     fi
     
-    echo $status
+    echo $statuss
 }
 
 # Enhanced timer for long-running commands
