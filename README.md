@@ -17,18 +17,29 @@
 
 ## 🚀 Featured Experiments
 
-- [**CyberPunk ZSH Theme**](./zsh-themes/cyberpunk.zsh-theme): A feature-rich ZSH theme with Git integration
+### QuantumShell ZSH Theme
+![QuantumShell Theme](https://github.com/user-attachments/assets/20b6cd72-9ad3-4397-ab38-f4873397ce62)
+A powerful ZSH theme with real-time Git insights, development environment detection, and system monitoring. Features include:
+- Smart Git status with commit analytics
+- Development environment detection (Node.js, Python, Docker, etc.)
+- System resource monitoring
+- Time-based color schemes
+- Long-running command tracking
+
+[**→ Install QuantumShell Theme**](./zsh-themes/quantumshell.zsh-theme)
+
+### Other Tools
 - [**System Monitor**](./system/monitor.sh): Real-time system resource monitoring
 - [**Dev Environment Setup**](./setup/dev-setup.sh): One-click development environment configuration
 
-## 💻 Installation
+## 💻 Quick Start
 
 ```bash
 # Clone the laboratory
-git clone https://github.com/I-Himanshu/my-script-laboratory.git
+git clone https://github.com/I-Himanshu/My-Script-Laboratory.git
 
 # Enter the lab
-cd my-script-laboratory
+cd My-Script-Laboratory
 
 # Make scripts executable
 chmod +x ./setup/install.sh
@@ -37,13 +48,25 @@ chmod +x ./setup/install.sh
 ./setup/install.sh
 ```
 
+### Installing QuantumShell Theme
+```bash
+# Copy theme to oh-my-zsh themes directory
+cp zsh-themes/quantumshell.zsh-theme ~/.oh-my-zsh/custom/themes/
+
+# Set theme in your .zshrc
+sed -i 's/ZSH_THEME=".*"/ZSH_THEME="quantumshell"/' ~/.zshrc
+
+# Reload ZSH
+source ~/.zshrc
+```
+
 ## 🛠️ Usage
 
-Each script in this laboratory is documented with:
+Each script in this laboratory is thoroughly documented with:
 - Purpose and functionality
 - Required dependencies
 - Usage instructions
-- Examples
+- Real-world examples
 
 ## 🤝 Contributing
 
@@ -57,7 +80,7 @@ Each script in this laboratory is documented with:
 
 **Himanshu Kumar**
 - GitHub: [@I-Himanshu](https://github.com/I-Himanshu)
-- LinkedIn: [Himanshu Kumar](linkedin.com/in/i-himanshu)
+- LinkedIn: [Himanshu Kumar](https://linkedin.com/in/i-himanshu)
 
 ## 📜 License
 
@@ -69,7 +92,7 @@ If these experiments help your Linux journey, consider giving a star! It helps o
 
 ## 🔍 Keywords
 
-`linux`, `shell-scripts`, `automation`, `zsh-themes`, `bash`, `system-configuration`, `dotfiles`, `cli-tools`, `productivity`, `linux-customization`
+`linux`, `shell-scripts`, `automation`, `zsh-themes`, `bash`, `system-configuration`, `dotfiles`, `cli-tools`, `productivity`, `linux-customization`, `quantumshell`, `terminal-customization`
 
 ---
 Made with 🧪 in the Laboratory by Himanshu Kumar
